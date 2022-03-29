@@ -29,7 +29,7 @@ export default function BasicTable(props) {
 
 const {filterText,selectedGender,data : rows}=props;
 const filterByText=(row)=>{
-if(row.first_name.includes(filterText)||row.last_name.includes(filterText)||row.email.includes(filterText))
+if(row.first_name.toLowerCase().includes(filterText.toLowerCase())||row.last_name.toLowerCase().includes(filterText.toLowerCase())||row.email.toLowerCase().includes(filterText.toLowerCase()))
     return true
 return false
 }

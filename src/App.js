@@ -35,32 +35,41 @@ function App() {
   return (
     <div >
      <h2>Candidates</h2>
-     <div className='dataUpdaters'>
-<div>
-      <input onClick={(e)=>{
-        const isSelected=e.target.checked;
-        genderChangeHandler(isSelected,"Male")
-      }}  type={"checkbox"}/>Male
-      </div>
-      <div>
+        <div className='dataUpdaters'>
 
-      <input  onClick={(e)=>{
-        const isSelected=e.target.checked;
-        genderChangeHandler(isSelected,"Female")
-      }}type="checkbox"/>Female
-      </div>
-      <div>
+              <div>
+                <input onClick={(e)=>{
+                  const isSelected=e.target.checked;
+                  genderChangeHandler(isSelected,"Male")
+                }}  type={"checkbox"}/>Male
+              </div>
 
-      <input onChange={(e=>handleFilterChange(e.target.value))} value={filterText} type="text" placeholder='Whom are you looking for ?'/>
-      </div>
+        <div>
+
+            <input  onClick={(e)=>{
+              const isSelected=e.target.checked;
+              genderChangeHandler(isSelected,"Female")
+            }}type="checkbox"/>Female
+
+
+        </div>
+
+        <div>
+
+             <input onChange={(e=>handleFilterChange(e.target.value))} value={filterText} type="text" placeholder='Whom are you looking for ?'/>
+        </div>
       
      </div>
-     <div>
-        <Grid data={data} filterText={filterText} selectedGender={selectedGender}/>
-      </div>
-      <div>
-      <Form data={data} setData={setData}/>
-      </div>
+        <div>
+
+            <Grid data={data} filterText={filterText} selectedGender={selectedGender}/>
+
+        </div>
+        <div>
+
+          <Form data={data} setData={setData}/>
+          
+        </div>
     </div> 
   );
 }
